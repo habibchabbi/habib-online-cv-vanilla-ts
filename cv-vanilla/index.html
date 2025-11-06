@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Habib - Curriculum Vitae</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="nav-toggle__line"></span>
+          <span class="nav-toggle__line"></span>
+          <span class="nav-toggle__line"></span>
+        </button>
+        <div class="brand__meta">
+          <span class="brand__name">Habib</span>
+          <span class="brand__role">Senior Front-end Engineer</span>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list" id="nav-list"></ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" id="theme-toggle" aria-label="Toggle theme">
+          <span class="material-icon" aria-hidden="true">🌗</span>
+        </button>
+        <button class="pill-button" id="download-cv">Download CV</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="hero" data-section>
+        <div class="hero__content">
+          <p class="hero__greeting">Bonjour, I am</p>
+          <h1 class="hero__title">Habib Ait Abderrahmane</h1>
+          <p class="hero__subtitle">Senior Front-end Engineer · Design Systems Specialist</p>
+          <p class="hero__description" id="hero-summary"></p>
+          <div class="hero__actions">
+            <a class="pill-button" href="#contact">Contact Me</a>
+            <a class="pill-button pill-button--ghost" href="#projects">View Projects</a>
+          </div>
+          <div class="hero__chips" id="hero-chips"></div>
+        </div>
+        <div class="hero__media">
+          <div class="hero__portrait" aria-hidden="true"></div>
+          <ul class="hero__stats" id="hero-stats"></ul>
+        </div>
+      </section>
+
+      <section class="section" id="skills" data-section>
+        <header class="section__header">
+          <h2>Skills</h2>
+          <p>Technical proficiencies curated for scalable digital products.</p>
+          <div class="chip-group" id="skills-filters" role="group" aria-label="Filter skills"></div>
+        </header>
+        <div class="card-grid" id="skills-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="section" id="experience" data-section>
+        <header class="section__header">
+          <h2>Experience</h2>
+          <p>Professional journey across startups, scale-ups, and product teams.</p>
+        </header>
+        <div class="timeline" id="experience-timeline"></div>
+      </section>
+
+      <section class="section" id="projects" data-section>
+        <header class="section__header">
+          <h2>Projects</h2>
+          <p>Selected work that highlights design systems, accessibility, and performance.</p>
+        </header>
+        <div class="card-grid card-grid--projects" id="projects-grid"></div>
+      </section>
+
+      <section class="section" id="education" data-section>
+        <header class="section__header">
+          <h2>Education</h2>
+          <p>Academic background and continuous learning highlights.</p>
+        </header>
+        <div class="timeline" id="education-timeline"></div>
+      </section>
+
+      <section class="section" id="contact" data-section>
+        <header class="section__header">
+          <h2>Contact</h2>
+          <p>Let’s collaborate on delightful user interfaces and digital experiences.</p>
+        </header>
+        <div class="contact-grid">
+          <div class="contact-card" id="contact-card"></div>
+          <form class="contact-form" id="contact-form">
+            <div class="form-field">
+              <label for="contact-name">Name</label>
+              <input id="contact-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="form-field">
+              <label for="contact-email">Email</label>
+              <input id="contact-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-field">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="pill-button">Send Message</button>
+            <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Crafted with vanilla JavaScript · Theme aware · Accessible interactions</p>
+      <div class="footer-links" id="footer-links"></div>
+    </footer>
+
+    <template id="skill-card-template">
+      <article class="card skill-card">
+        <header class="card__header">
+          <h3 class="card__title"></h3>
+          <span class="chip card__meta"></span>
+        </header>
+        <p class="card__body"></p>
+        <ul class="card__tags"></ul>
+      </article>
+    </template>
+
+    <template id="project-card-template">
+      <article class="card project-card">
+        <header class="card__header">
+          <div>
+            <h3 class="card__title"></h3>
+            <p class="card__subtitle"></p>
+          </div>
+          <span class="chip card__meta"></span>
+        </header>
+        <p class="card__body"></p>
+        <ul class="card__tags"></ul>
+        <div class="card__actions"></div>
+      </article>
+    </template>
+
+    <template id="timeline-item-template">
+      <article class="timeline-item">
+        <div class="timeline-item__marker"></div>
+        <div class="timeline-item__content">
+          <header>
+            <h3 class="timeline-item__title"></h3>
+            <p class="timeline-item__meta"></p>
+          </header>
+          <p class="timeline-item__description"></p>
+          <ul class="timeline-item__tags"></ul>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
