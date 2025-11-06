@@ -1,4 +1,5 @@
 import { $$ } from './dom.js';
+import { partialFallbacks } from './partials-fallback.js';
 
 async function loadPartial(name) {
   const url = new URL(`../partials/${name}.html`, import.meta.url);
@@ -20,8 +21,14 @@ export async function injectPartials() {
         const markup = await loadPartial(name);
         container.innerHTML = markup;
       } catch (error) {
-        console.error(error);
-        container.innerHTML = '<p role="status">Content failed to load.</p>';
+        console.warn(`Falling back to inline partial for "${name}"`, error);
+        const fallbackMarkup = partialFallbacks[name];
+        if (fallbackMarkup) {
+          container.innerHTML = fallbackMarkup;
+        } else {
+          container.innerHTML = '<p role="status">Content failed to load.</p>';
+        }
+
       }
     })
   );
