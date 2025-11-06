@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/cv"
+    },
+    {
+      "path": "./libs/data"
+    },
+    {
+      "path": "./libs/types"
+    },
+    {
+      "path": "./libs/shared-ui"
+    },
+    {
+      "path": "./libs/shared"
+    }
+  ]
+}
