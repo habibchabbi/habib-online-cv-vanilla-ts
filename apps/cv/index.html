@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Habib Ogheneyoma – Frontend Engineer</title>
+    <meta
+      name="description"
+      content="Curriculum vitae for Habib Ogheneyoma, a frontend engineer focused on thoughtful interfaces, performant web experiences, and collaborative delivery."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+  </head>
+  <body>
+    <noscript class="no-js">This experience requires JavaScript to load content.</noscript>
+    <button class="theme-toggle" type="button" aria-label="Toggle color theme" data-theme-toggle>
+      <span class="theme-toggle__icon" aria-hidden="true">☀️</span>
+    </button>
+    <button class="to-top" type="button" data-scroll-top>
+      <span class="to-top__icon" aria-hidden="true">↑</span>
+      <span class="to-top__label">Top</span>
+    </button>
+
+    <header class="site-header" id="top" data-partial="header"></header>
+
+    <main>
+      <section id="about" class="section section--hero" data-section data-partial="hero"></section>
+      <section id="skills" class="section" data-section data-partial="skills"></section>
+      <section id="experience" class="section section--alt" data-section data-partial="experience"></section>
+      <section id="projects" class="section" data-section data-partial="projects"></section>
+      <section id="education" class="section section--alt" data-section data-partial="education"></section>
+      <section id="contact" class="section" data-section data-partial="contact"></section>
+    </main>
+
+    <footer class="site-footer" data-partial="footer"></footer>
+
+    <script type="module" src="scripts/main.js"></script>
+  </body>
+</html>
