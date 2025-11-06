@@ -28,6 +28,7 @@ export async function injectPartials() {
         } else {
           container.innerHTML = '<p role="status">Content failed to load.</p>';
         }
+
       }
     })
   );
